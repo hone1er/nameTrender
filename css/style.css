@@ -52,3 +52,51 @@ header nav{
     float: right;
     margin-top: -30px;
 }
+
+header .highlight, header .current a{
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+#showcase{
+    color: #ffffff;
+    min-height: 400px;
+    background: url(../img/young-boy-smiles-at-father-holding-baby-sister.jpg) no-repeat -1800px -1100px;
+    text-align: center;
+}
+
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#showcase p{
+    font-size: 16.5px;
+}
+
+#firstname{
+    padding: 15px;
+    color: #ffffff;
+    background: #35424a;
+}
+
+#firstname h1{
+    float: left;
+}
+
+#firstname form{
+    margin-top: 15px;
+    float: right;
+}
+
+#firstname input[type="text"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
