@@ -88,11 +88,13 @@ header a:hover{
 
 #firstname h1{
     float: left;
+    margin-left: 50px;
 }
 
 #firstname form{
     margin-top: 15px;
     float: right;
+    margin-right: 80px;
 }
 
 #firstname input[type="text"]{
