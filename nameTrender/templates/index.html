@@ -9,8 +9,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
+        <link type="text/css" rel="stylesheet" href="{{url_for("static", filename="styles/style.css")}}">    </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -18,12 +17,12 @@
         <header>
             <div class="container">
                 <div id="branding">
-                    <h1>Namer Trender</h1>
+                    <h1><span class="highlight">Name</span> Trender</h1>
                 </div>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li class="current"><a href="index.html">Home</a></li>
                     <li><a href="services.html"></a>Services</li>
                     <li><a href="about.html"></a>About</li>
                 </ul>
@@ -31,14 +30,18 @@
         </header>
 
         <section id="showcase"><div class="container">
-            <h1>Get the Trend for your name!</h1>
-            <p>Enter 1 or more names to see how they've been trending in the US from 1970-2017. The data for the names was sourced from https://www.ssa.gov. The count for each name is based on applications to the Social Security Administration for new borns.</p>
+            <h1>See the trend for any Name!</h1>
+            <p>Enter 1 or more names to see how they've been trending in the US from 1970-2017.
+                <br><br>
+                 The data for the names was sourced from https://www.ssa.gov. 
+                 <br><br>
+                 The count for each name is based on applications to the Social Security Administration for new borns.</p>
         </div></section>
 
         <section id="firstname">
             <div class="container">
                 <h1>Enter the first name you would like to see the trend for</h1>
-                <form action="graph.py">
+                <form action="graph.py" method="POST">
                     <input type="text" name="First Name" id="name">
                     <button type="submit" class="send_name">Submit</button>
                 </form>
@@ -52,7 +55,7 @@
                     <p>This graph shows total number of babies born per year(2000-2017)</p>
                 </div>
                 <div class="graph">
-                    <img src="./img/average_name_use.png" alt="">
+                        <img src="/graph.py" alt="my plot">
                     <h3>Another graph</h3>
                     <p>This graph how the average number of times any name was used(2000-2017)</p>
                 </div>
