@@ -1,0 +1,104 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(238, 238, 238)
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+    
+}
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+
+}
+
+header li{
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding{
+    float: left;
+}
+
+header #branding h1{
+    margin: 0
+}
+
+header nav{
+    float: right;
+    margin-top: -30px;
+}
+
+header .highlight, header .current a{
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+#showcase{
+    color: #ffffff;
+    min-height: 400px;
+    background: url(../img/young-boy-smiles-at-father-holding-baby-sister.jpg) no-repeat -1800px -1100px;
+    text-align: center;
+}
+
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#showcase p{
+    font-size: 16.5px;
+}
+
+#firstname{
+    padding: 15px;
+    color: #ffffff;
+    background: #35424a;
+}
+
+#firstname h1{
+    float: left;
+    margin-left: 50px;
+}
+
+#firstname form{
+    margin-top: 15px;
+    float: right;
+    margin-right: 80px;
+}
+
+#firstname input[type="text"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
