@@ -22,7 +22,7 @@
             </div>
             <nav>
                 <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
+                    <li class="current"><a href=" ">Home</a></li>
                     <li><a href="services.html"></a>Services</li>
                     <li><a href="about.html"></a>About</li>
                 </ul>
@@ -31,7 +31,7 @@
 
         <section id="showcase"><div class="container">
             <h1>See the trend for any Name!</h1>
-            <p>Enter 1 or more names to see how they've been trending in the US from 1970-2017.
+            <p>Enter a name to see how it has been trending in the US from 1880-2017.
                 <br><br>
                  The data for the names was sourced from https://www.ssa.gov. 
                  <br><br>
@@ -50,17 +50,17 @@
         <section id="graphs">
             <div class="container">
                 <div class="graph">
-                    <img src="./img/babies_born_per_year.png">
+                    <img src="{{ user_image }}" alt="User Image">
                     <h3>Your Trend</h3>
                     <p>This graph shows total number of babies born per year(2000-2017)</p>
                 </div>
                 <div class="graph">
-                        <img src="/graph.py" alt="my plot">
+                    <img src="static/img/babies_born_per_year.png">
                     <h3>Another graph</h3>
                     <p>This graph how the average number of times any name was used(2000-2017)</p>
                 </div>
                 <div class="graph">
-                    <img src="./img/screenshot_ssa.jpg" alt="">
+                    <img src="static/img/screenshot_ssa.jpg" alt="">
                     <h3>Another one</h3>
                     <p>The information used to create your graph was in this format. It was transformed using Python libraries such as matplotlib and Pandas.</p>
                 </div>
