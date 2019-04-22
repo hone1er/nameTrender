@@ -21,7 +21,7 @@ def my_form_post():
     scatterList(text)
     full_filename = "static/img/graph.png"
     return render_template("index.html", user_image = full_filename)
-  
+
     
 names = pd.read_csv("nameTrender/Resources/namedf.csv")[['name','gender','count','year']]
 
