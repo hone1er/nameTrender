@@ -15,14 +15,18 @@ def index():
     return render_template("index.html", user_image = full_filename)
 
 
-@app.route('/graph.py', methods=['POST', 'GET'])
-def my_form_post():
+@app.route('/graph', methods=['POST', 'GET'])
+def graph():
     text = request.form['First Name'].title()
     scatterList(text)
     full_filename = "static/img/graph.png"
     return render_template("index.html", user_image = full_filename)
 
-    
+
+@app.route('/about.html')
+def about():
+    return render_template("about.html")
+
 names = pd.read_csv("nameTrender/Resources/namedf.csv")[['name','gender','count','year']]
 
 def scatterList(name):
@@ -40,7 +44,6 @@ def scatterList(name):
     plt.title(f"Popularity of Name for {str(name).title()} - Male(US)")
     plt.ylabel("Name Count")
     plt.legend()
-    plt.show()
     plt.savefig("nameTrender/static/img/graph.png")
     
     
