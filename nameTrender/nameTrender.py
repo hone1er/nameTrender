@@ -40,7 +40,7 @@ def scatterList(name):
 @app.route("/")
 def index():
     full_filename = "static/img/graph.png"
-    return render_template("index.html", user_image = full_filename)
+    return render_template("index.html", user_image = full_filename, name='Json')
 
 # Returned when "First Name" for POST request is sent
 @app.route("/graph", methods=["POST", "GET"])
@@ -50,12 +50,12 @@ def graph():
     # Check the pregraphedNames dictionary for a premade graph of the input name
     if name in pregraphedNames:
         filename = f"static/img/pregraphed/{pregraphedNames[name]}"
-        return render_template("index.html", user_image = filename)
+        return render_template("index.html", user_image = filename, name=name)
     # if the name is not in the dictionary, make a new graph and add the name/pic to the dict
     scatterList(name)
     pregraphedNames[f"{name}"] = f"{name}.png"
     filename = f"static/img/pregraphed/{name}.png"
-    return render_template("index.html", user_image = filename)
+    return render_template("index.html", user_image = filename, name=name)
 
 # About Page
 @app.route("/about.html")

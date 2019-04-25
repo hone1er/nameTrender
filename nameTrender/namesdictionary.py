@@ -1,4 +1,5 @@
-# A dictionary containing all filenames for pregraphed, popular names.
+# A dictionary containing all filenames for pregraphed, popular names. 
+# May need to separate the males from females to avoid conflicts between names
 pregraphedNames = {'Aaliyah': 'Aaliyah.png',
  'Aaron': 'Aaron.png',
  'Abby': 'Abby.png',
