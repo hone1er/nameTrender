@@ -6,6 +6,8 @@ import io
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
+# create a dictionary that has the name and image of all the premade graphs 
+# if the name is not in the dictionary, make a new graph and add the name/pic to the dict
 
 app = Flask(__name__)
 names = pd.read_csv("nameTrender/Resources/namedf.csv")[['name','gender','count','year']]
