@@ -501,6 +501,8 @@ pregraphedMales = {'Aaron': 'Aaron.png',
  'Zachary': 'Zachary.png',
  'Zane': 'Zane.png'}
 
+
+
 pregraphedFemales = {'Aaliyah': 'Aaliyah.png',
  'Abby': 'Abby.png',
  'Abigail': 'Abigail.png',
@@ -842,7 +844,6 @@ pregraphedFemales = {'Aaliyah': 'Aaliyah.png',
  'Marlene': 'Marlene.png',
  'Marsha': 'Marsha.png',
  'Martha': 'Martha.png',
- 'Mary': 'Mary.png',
  'Maryann': 'Maryann.png',
  'Mattie': 'Mattie.png',
  'Maureen': 'Maureen.png',
