@@ -6,22 +6,28 @@ function buildMetadata() {
   // Use `d3.json` to fetch the metadata for a sample
   // Use d3 to select the panel with id of `#sample-metadata`
   // Format the data
-  var x = document.getElementById("frm1");
-  var text = "";
-  text += x.elements[0].value;
+  var selector = d3.select("#name")
+  var text = selector.property("value")
   var url = `/names/${text}`;
   var traces = []
-  console.log(url);
   d3.json(url).then(function (response) {
     Object.entries(response).forEach((data) => {
+      console.log(data[0]);
       var trace = {
         x: data[1].year,
         y: data[1].count,
-        type: 'scatter'
+        type: 'scatter',
+        name: `${data[0]}`
       };
       traces.push(trace)
     });
-    Plotly.newPlot('demo', traces)
+    var layout1 = {
+      title: `Babies born per year with the name ${text}`,
+      showlegend: true,
+
+    };
+
+    Plotly.newPlot('demo', traces, layout1, {responsive: true})
   })
 };
 
