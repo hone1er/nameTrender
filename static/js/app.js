@@ -27,7 +27,7 @@ function buildMetadata() {
 
     };
 
-    Plotly.newPlot('demo', traces, layout1, {responsive: true})
+    Plotly.newPlot('demo', traces, layout1, { responsive: true })
   })
 };
 
