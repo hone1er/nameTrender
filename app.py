@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, Response, jsonify
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
-from namesdictionary import pregraphedMales, pregraphedFemales
 
 
 app = Flask(__name__)
