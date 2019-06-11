@@ -7,9 +7,6 @@ from namesdictionary import pregraphedMales, pregraphedFemales
 
 app = Flask(__name__)
 
-names = pd.read_csv("Resources/namedf.csv")[["name","gender","count","year"]]
-
-
 #####################################
 #          Flask App Routes         #
 #####################################
@@ -22,10 +19,13 @@ def graph(name):
     # Make a plot for Male and Female
     jsond = {}
     print(f"this is the name: {name}")
-    for gender in ['M','F']:
+    for gender in ['F', 'M']:
         namedf = names[(names["name"]==f"{name}") & (names["gender"]==f"{gender}")][["year","count"]].reset_index().drop('index', axis=1)
         namedict = namedf.to_dict(orient='list')
-        jsond[f'{gender}'] = namedict
+        if gender == 'M':
+            jsond["Male"] = namedict
+        else:
+            jsond["Female"] = namedict
     return jsonify(jsond)
 #####################################
 #          Flask App Routes         #
