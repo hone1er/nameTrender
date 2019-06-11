@@ -1,7 +1,0 @@
-List of data sources:
-
-
-
-https://www.ssa.gov/oact/babynames/popularity_increase.html
-
-https://www.ssa.gov/oact/babynames/limits.html

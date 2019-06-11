@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block items %}
+        <section id="showcase"><div class="container">
+            <h1>See the trend for any Name!</h1>
+            <p>Enter a name to see how it has been trending in the US from 1880-2017.
+                <br><br>
+                 The data for the names was sourced from https://www.ssa.gov. 
+                 <br><br>
+                 The count for each name is based on applications to the Social Security Administration for new borns.</p>
+        </div></section>
+
+        
+
+        <section id="firstname">
+            <div class="container">
+                <h1>Enter the first name you would like to see the trend for</h1>
+                <form id="frm1">
+                    <input type="text" id="name">
+                    <button id="filter-btn" type="submit" class="btn btn-default center-block">Filter</button>
+                </form>
+            </div>
+        </section>
+        <section id="graphs">
+                <div id="demo"></div>
+        </section>
+        {% endblock %}
