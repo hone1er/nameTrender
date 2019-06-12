@@ -14,27 +14,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="{{url_for("static", filename="styles/style.css")}}">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Name</span> Trender</h1>
+            <![endif]-->
+
+    <nav class="navbar navbar-inverse" style="margin-bottom:-20px;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand"><span class="highlight">Name</span> Trender</h1>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav" style="float: right;">
+                    {% block nav %}
+
+                    {% endblock %}
+                </ul>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li class="current"><a href="{{ url_for("index") }}">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="{{ url_for("about") }}"> About</a></li>
-            </ul>
-        </nav>
-    </header>
+    </nav>
+
     {% block items %}
 
 
@@ -44,6 +50,8 @@
         <p>Name Trender, Copyright &copy; 2019</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
