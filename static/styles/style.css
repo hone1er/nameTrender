@@ -141,6 +141,25 @@ ul.nav.navbar-nav {
     margin-top: 2rem;
 }
 
+#wrap {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+  }
+  
+  /* Set the fixed height of the footer here */
+  #footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 150;
+  }
+
+
+
 
 @media (max-width : 425px) {
     #firstname form{
@@ -159,4 +178,24 @@ ul.nav.navbar-nav {
     #demo {
         overflow-wrap: break-word;
     }
+}
+
+@media (min-width : 1440px) {
+    #footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -175px;
+        z-index: 150;
+      }
+}
+
+@media (min-width : 2560px) {
+    #footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        z-index: 150;
+      }
 }
