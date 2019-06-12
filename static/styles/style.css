@@ -131,6 +131,11 @@ footer{
     text-align: center;
 }
 
+#demo {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
 @media (max-width : 425px) {
     #firstname form{
         float: none;
@@ -144,5 +149,8 @@ footer{
         float: none;
         margin-left: 10px;
         
+    }
+    #demo {
+        overflow-wrap: break-word;
     }
 }
