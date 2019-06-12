@@ -136,6 +136,12 @@ footer{
     margin-right: 0;
     padding: 0;
 }
+
+ul.nav.navbar-nav {
+    margin-top: 2rem;
+}
+
+
 @media (max-width : 425px) {
     #firstname form{
         float: none;
