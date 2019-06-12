@@ -96,7 +96,7 @@ header a:hover{
 #firstname form{
     margin-top: 15px;
     float: right;
-    margin-right: 80px;
+    margin-right: 70px;
 }
 
 #firstname input[type="text"]{
@@ -134,6 +134,15 @@ footer{
 @media (max-width : 425px) {
     #firstname form{
         float: none;
+        margin-left: 40px;
+        
+    }
+}
+
+@media (max-width : 320px) {
+    #firstname form{
+        float: none;
+        margin-left: 10px;
         
     }
 }
