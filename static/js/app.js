@@ -22,7 +22,7 @@ function buildMetadata() {
       traces.push(trace)
     });
     var layout1 = {
-      title: `Babies born per year with the name ${text}`,
+      title: `Name: ${text}`,
       showlegend: true,
 
     };
