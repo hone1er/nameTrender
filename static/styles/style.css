@@ -140,7 +140,9 @@ ul.nav.navbar-nav {
     margin-top: 2rem;
 }
 
+h3 {
 
+}
 
 
 
@@ -180,6 +182,12 @@ ul.nav.navbar-nav {
         margin-left: 5px;
         margin-top: 5px;
     }
+}
+
+#contact {
+    position: relative;
+    left: 0%;
+    font-size: 18px;
 }
 
 @media (max-width : 320px) {

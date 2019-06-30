@@ -31,8 +31,10 @@ function buildMetadata() {
   })
 };
 
-var filterbtn = d3.select("#filter-btn");
 
+
+var filterbtn = d3.select("#filter-btn");
 filterbtn.on("click", buildMetadata);
+
 
 
