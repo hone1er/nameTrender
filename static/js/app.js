@@ -37,7 +37,7 @@ function buildMetadata() {
           y: y,
           xref: "x",
           yref: "y",
-          text: `Max:${x} <br> Year:${y}`,
+          text: `Max:${y} <br> Year:${x}`,
           showarrow: true,
           font: {
             family: "Courier New, monospace",
