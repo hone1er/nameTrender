@@ -184,6 +184,10 @@ h3 {
     }
 }
 
+.gtitle {
+    text-transform: capitalize;
+}
+
 #contact {
     position: relative;
     left: 0%;

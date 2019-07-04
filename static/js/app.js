@@ -6,10 +6,7 @@ function buildMetadata() {
   var text = selector.property("value");
   var url = `/names/${text}`;
   var traces = [];
-  var maxValue = 0;
-
   var layout1 = {};
-
   var counter = 0;
   d3.json(url).then(function(response) {
     Object.entries(response).forEach(data => {
@@ -40,7 +37,7 @@ function buildMetadata() {
           y: y,
           xref: "x",
           yref: "y",
-          text: `max:${x} <br> Year:${y}`,
+          text: `Max:${x} <br> Year:${y}`,
           showarrow: true,
           font: {
             family: "Courier New, monospace",
