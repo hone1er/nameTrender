@@ -2,10 +2,6 @@ var name = d3.select("#name");
 
 function buildMetadata() {
   d3.event.preventDefault();
-  // @TODO: Complete the following function that builds the metadata panel
-  // Use `d3.json` to fetch the metadata for a sample
-  // Use d3 to select the panel with id of `#sample-metadata`
-  // Format the data
   var selector = d3.select("#name")
   var text = selector.property("value")
   var url = `/names/${text}`;
@@ -15,21 +11,27 @@ function buildMetadata() {
   var layout1 = {}
   var mYears = []
   var mValues = []
+  var counter = 0
   d3.json(url).then(function (response) {
     Object.entries(response).forEach((data) => {
       console.log(data[0]);
+      var color = (counter > 0) ? '#5074E8' : '#F47474';
       var trace = {
         x: data[1].year,
         y: data[1].count,
         type: 'scatter',
-        name: `${data[0]}`
+        name: `${data[0]}`,
+        line: {
+          color: `${color}`,
+          width: 3
+        }
       };
+      counter ++
       traces.push(trace)
       maxValue =  Math.max(...trace.y)
       maxYear = trace.x[trace.y.indexOf(maxValue)]
       mYears.push(maxYear)
       mValues.push(maxValue)
-      console.log(mYears, mValues)
       layout1 = {
         title: `Name: ${text}`,
         showlegend: true,
@@ -56,7 +58,7 @@ function buildMetadata() {
             bordercolor: '#c7c7c7',
             borderwidth: 2,
             borderpad: 4,
-            bgcolor: '#0146be',
+            bgcolor: '#E85050',
             opacity: 0.8
           },
           {
@@ -81,7 +83,7 @@ function buildMetadata() {
             bordercolor: '#c7c7c7',
             borderwidth: 2,
             borderpad: 4,
-            bgcolor: '#ff7f0e',
+            bgcolor: 'blue',
             opacity: 0.7
           }
         ]
@@ -93,9 +95,5 @@ function buildMetadata() {
 };
 
 
-
 var filterbtn = d3.select("#filter-btn");
 filterbtn.on("click", buildMetadata);
-
-
-

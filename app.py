@@ -19,14 +19,14 @@ def graph(name):
     # Make a plot for Male and Female
     jsond = {}
     print(f"this is the name: {name}")
-    for gender in ['F', 'M']:
+    for gender in ['M', 'F']:
         namedf = names[(names["name"] == f"{name}") & (names["gender"] == f"{gender}")][[
             "year", "count"]].reset_index().drop('index', axis=1)
         namedict = namedf.to_dict(orient='list')
-        if gender == 'M':
-            jsond["Male"] = namedict
-        else:
+        if gender == 'F':
             jsond["Female"] = namedict
+        else:
+            jsond["Male"] = namedict
     return jsonify(jsond)
 #####################################
 #          Flask App Routes         #
@@ -34,8 +34,7 @@ def graph(name):
 # Home Page
 @app.route("/")
 def index():
-    full_filename = "static/img/graph.png"
-    return render_template("index.html", maleimg=full_filename, femaleimg=full_filename, name='Json')
+    return render_template("index.html")
 
 
 # About Page
