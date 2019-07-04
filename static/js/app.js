@@ -86,8 +86,21 @@ function buildMetadata() {
             bgcolor: 'blue',
             opacity: 0.7
           }
-        ]
-      
+        ],
+        legend: {
+          x: 0,
+          y: -0.125,
+          traceorder: 'normal',
+          font: {
+            family: 'sans-serif',
+            size: 12,
+            color: '#000'
+          },
+          bgcolor: '#FFFFFF',
+          bordercolor: '#000000',
+          borderwidth: 2,
+          "orientation": "h"
+        }      
       };
     });
     Plotly.newPlot('demo', traces, layout1, { responsive: true })
