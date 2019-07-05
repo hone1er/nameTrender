@@ -10,29 +10,22 @@
 {% endblock %}
 
 {% block items %}
-<section id="showcase">
-    <div class="container">
-        <h1>See the trend for any Name!</h1>
-        <p>Enter a name to see how it has been trending in the US from 1880-2017.
-            <br><br>
-            The data for the names was sourced from https://www.ssa.gov.
-            <br><br>
-            The count for each name is based on applications to the Social Security Administration for new borns.</p>
-    </div>
-</section>
-
-
-
+<center style="margin-top: 10%; margin-bottom:10%;">
+<h1><span class="highlight">Name</span> Trender</h1>
+</center>
 <section id="firstname">
     <div class="container-fluid nameform">
-        <h1>Enter the first name you would like to see the trend for</h1>
+        <h1>Enter a name: </h1>
         <form id="frm1">
             <input type="text" id="name">
-            <button id="filter-btn" type="submit" class="send_name">Filter</button>
+            <button id="filter-btn" type="submit" class="send_name">Trend</button>
         </form>
     </div>
 </section>
 <section id="graphs">
     <div id="demo" class="container-fluid" style="max-width: 100%;"></div>
 </section>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 {% endblock %}
