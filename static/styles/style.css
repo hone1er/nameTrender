@@ -64,18 +64,28 @@ header a:hover{
     font-weight: bold;
 }
 
+
 #showcase{
     color: #ffffff;
-    min-height: 400px;
-    background: url(../img/young-boy-smiles-at-father-holding-baby-sister.jpg) no-repeat -1800px -1100px;
-    text-align: center;
-    margin-top: -px;
+    margin-top: 0px;
+    background: url(../img/blackboard-blur-chalkboard.jpg)  0px 0px;
 }
 
-#showcase h1{
+#show{
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    min-height: 250px;
     margin-top: 100px;
     font-size: 55px;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color:rgba(1,1,1,0.8);
+    padding:10px 10px 50px 10px;
 }
 
 #showcase p{
@@ -91,12 +101,16 @@ header a:hover{
 #firstname h1{
     float: left;
     margin-left: 50px;
+    position: relative;
+    left: 18%; bottom: 5px;
 }
 
 #firstname form{
     margin-top: 15px;
     float: right;
     margin-right: 70px;
+    position: relative; 
+    right:18%
 }
 
 #firstname input[type="text"]{
@@ -122,6 +136,7 @@ header a:hover{
     margin-top: 5px;
 }
 
+
 footer{
     color: #ffffff;
     padding: 15px;
@@ -134,18 +149,28 @@ footer{
     margin-left: 0;
     margin-right: 0;
     padding: 0;
+    height: 650px;
 }
 
 ul.nav.navbar-nav {
     margin-top: 2rem;
 }
 
-h3 {
+
+
+
+
+@media (max-width : 1024px) {
+    #firstname h1{
+        position: relative;
+        left: 0;
+    }
+    #firstname form {
+        position: relative;
+        right: 0;
+    }
 
 }
-
-
-
 
 
 @media (max-width : 768px) {
@@ -160,6 +185,9 @@ h3 {
         color: #ecd4d4;
         margin-left: 5px;
         margin-top: 5px;
+    }
+    #demo{
+        height: 450px;
     }
 }
 
