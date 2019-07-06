@@ -11,8 +11,9 @@ app = Flask(__name__)
 
 #########################################
 #                         Names API                             #
- #               returns data in the form                  #
-#          {'gender': {'year': [], 'count': []}}         #
+#               returns data in the form                  #
+#          {'M': {'year': [], 'count': []},
+#           'F': {'year': [], 'count': []}}         #
 #########################################
 @app.route("/names/<name>", methods=["GET"])
 def graph(name):
