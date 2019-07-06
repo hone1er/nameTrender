@@ -1,31 +1,28 @@
-{% extends "layout.html" %}
-
-{% block nav %}
+{% extends "layout.html" %} {% block nav %}
 <li class="nav-item active">
-        <a class="nav-link current" href="{{url_for('index')}}">Home<span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{url_for('about')}}">About</a>
-    </li>
-{% endblock %}
-
-{% block items %}
+  <a class="nav-link current" href="{{ url_for('index') }}"
+    >Home<span class="sr-only">(current)</span></a
+  >
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ url_for('about') }}">About</a>
+</li>
+{% endblock %} {% block items %}
 <center style="margin-top: 10%; margin-bottom:10%;">
-<h1><span class="highlight">Name</span> Trender</h1>
+  <h1><span class="highlight">Name</span> Trender</h1>
 </center>
 <section id="firstname">
-    <div class="container-fluid nameform">
-        <h1>Enter a name: </h1>
-        <form id="frm1">
-            <input type="text" id="name">
-            <button id="filter-btn" type="submit" class="send_name">Trend</button>
-        </form>
-    </div>
+  <div class="container-fluid nameform">
+    <h1>Enter a name:</h1>
+    <form id="frm1">
+      <input type="text" id="name" />
+      <button id="filter-btn" type="submit" class="send_name">Trend</button>
+    </form>
+  </div>
 </section>
 <section id="graphs">
-    <div id="demo" class="container-fluid" style="max-width: 100%;"></div>
+  <div id="demo" class="container-fluid" style="max-width: 100%;"></div>
 </section>
-{% endblock %}
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 {% endblock %}

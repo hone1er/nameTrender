@@ -1,16 +1,14 @@
-var name = d3.select("#name");
-
-function buildMetadata() {
+function buildLineGraph() {
   d3.event.preventDefault();
+  // Grab the value from the form and make a d3.json request to the API in order to build traces and layout for line graph
   var selector = d3.select("#name");
   var text = selector.property("value");
   var url = `/names/${text}`;
   var traces = [];
-  var layout1 = {};
-  var counter = 0;
+  var layout = {};
   d3.json(url).then(function(response) {
     Object.entries(response).forEach(data => {
-      var color = counter > 0 ? "#5074E8" : "#F47474";
+      var color = data[0] == "Male" ? "#5074E8" : "#F47474";
       var trace = {
         x: data[1].year,
         y: data[1].count,
@@ -21,17 +19,15 @@ function buildMetadata() {
           width: 4
         }
       };
-      counter++;
       if (trace.x.length > 0) {
         traces.push(trace);
       }
-      var annotations = []
-      traces.forEach(element => {
-      
-        var y =  Math.max(...element.y);
-        var x = element.x[element.y.indexOf(y)];
-        var color =  element.line.color;
-        console.log(x, y, color)
+      var annotations = [];
+      traces.forEach(trace => {
+        var y = Math.max(...trace.y);
+        var x = trace.x[trace.y.indexOf(y)];
+        var color = trace.line.color;
+
         annotations.push({
           x: x,
           y: y,
@@ -56,9 +52,9 @@ function buildMetadata() {
           borderpad: 4,
           bgcolor: color,
           opacity: 0.8
-        })
+        });
       });
-      layout1 = {
+      layout = {
         title: `Name: ${text}`,
         showlegend: true,
         annotations: annotations,
@@ -78,9 +74,9 @@ function buildMetadata() {
         }
       };
     });
-    Plotly.newPlot("demo", traces, layout1, { responsive: true });
+    Plotly.newPlot("demo", traces, layout, { responsive: true });
   });
 }
 
 var filterbtn = d3.select("#filter-btn");
-filterbtn.on("click", buildMetadata);
+filterbtn.on("click", buildLineGraph);

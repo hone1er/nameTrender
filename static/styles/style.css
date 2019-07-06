@@ -1,247 +1,231 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
-    padding: 0;
-    margin: 0;
-    background-color: rgb(238, 238, 238);
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(238, 238, 238);
 }
 
-.container{
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
 
-ul{
-    margin: 0;
-    padding: 0;
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-header{
-    background: #35424a;
-    color: #ffffff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e8491d 3px solid;
-    
+header {
+  background: #35424a;
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #e8491d 3px solid;
 }
 
-header a{
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
-header li{
-    float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
 }
 
-header #branding{
-    float: left;
+header #branding {
+  float: left;
 }
 
-header #branding h1{
-    margin: 0;
-    padding: 0;
-   }
-
-header nav{
-    float: right;  
+header #branding h1 {
+  margin: 0;
+  padding: 0;
 }
 
-.highlight{
-    color: #e8491d;
-    font-weight: bold;
+header nav {
+  float: right;
 }
 
-header a:hover{
-    color: #cccccc;
-    font-weight: bold;
+.highlight {
+  color: #e8491d;
+  font-weight: bold;
 }
 
-
-#showcase{
-    color: #ffffff;
-    margin-top: 0px;
-    background: url(../img/blackboard-blur-chalkboard.jpg)  0px 0px;
+header a:hover {
+  color: #cccccc;
+  font-weight: bold;
 }
 
-#show{
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    min-height: 250px;
-    margin-top: 100px;
-    font-size: 55px;
-    margin-bottom: -10px;
-    z-index: 2;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    background-color:rgba(1,1,1,0.8);
-    padding:10px 10px 50px 10px;
+#showcase {
+  color: #ffffff;
+  margin-top: 0px;
+  background: url(../img/blackboard-blur-chalkboard.jpg) 0px 0px;
 }
 
-#showcase p{
-    font-size: 16.5px;
+#show {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  min-height: 250px;
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: -10px;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.8);
+  padding: 10px 10px 50px 10px;
 }
 
-#firstname{
-    padding: 15px;
-    color: #ffffff;
-    background: #35424a;
+#showcase p {
+  font-size: 16.5px;
 }
 
-#firstname h1{
-    float: left;
-    margin-left: 50px;
-    position: relative;
-    left: 18%; bottom: 5px;
+#firstname {
+  padding: 15px;
+  color: #ffffff;
+  background: #35424a;
 }
 
-#firstname form{
-    margin-top: 15px;
-    float: right;
-    margin-right: 70px;
-    position: relative; 
-    right:18%
+#firstname h1 {
+  float: left;
+  margin-left: 50px;
+  position: relative;
+  left: 18%;
+  bottom: 5px;
 }
 
-#firstname input[type="text"]{
-    padding: 4px;
-    height: 25px;
-    width: 250px;
-    color: #35424a;
+#firstname form {
+  margin-top: 15px;
+  float: right;
+  margin-right: 70px;
+  position: relative;
+  right: 18%;
+}
 
+#firstname input[type="text"] {
+  padding: 4px;
+  height: 25px;
+  width: 250px;
+  color: #35424a;
 }
 
 /* Button */
-.send_name{
+.send_name {
+  height: 38px;
+  background: #e8491d;
+  border: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #ecd4d4;
+  margin-left: 5px;
+}
+
+.btn {
+  margin-top: 5px;
+}
+
+footer {
+  color: #ffffff;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #e8491d;
+  text-align: center;
+}
+
+#demo {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  height: 650px;
+}
+
+ul.nav.navbar-nav {
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  #firstname h1 {
+    position: relative;
+    left: 0;
+  }
+  #firstname form {
+    position: relative;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .send_name {
     height: 38px;
     background: #e8491d;
     border: 0;
     padding-left: 20px;
     padding-right: 20px;
+
     color: #ecd4d4;
     margin-left: 5px;
-}
-
-.btn {
     margin-top: 5px;
+  }
+  #demo {
+    height: 450px;
+  }
 }
 
+@media (max-width: 425px) {
+  #firstname form {
+    float: none;
+    margin-left: 40px;
+  }
 
-footer{
-    color: #ffffff;
-    padding: 15px;
-    margin-top: 20px;
-    background-color: #e8491d;
-    text-align: center;
-}
-
-#demo {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    height: 650px;
-}
-
-ul.nav.navbar-nav {
-    margin-top: 2rem;
-}
-
-
-
-
-
-@media (max-width : 1024px) {
-    #firstname h1{
-        position: relative;
-        left: 0;
-    }
-    #firstname form {
-        position: relative;
-        right: 0;
-    }
-
-}
-
-
-@media (max-width : 768px) {
-
-    .send_name{
-        height: 38px;
-        background: #e8491d;
-        border: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-
-        color: #ecd4d4;
-        margin-left: 5px;
-        margin-top: 5px;
-    }
-    #demo{
-        height: 450px;
-    }
-}
-
-
-@media (max-width : 425px) {
-    #firstname form{
-        float: none;
-        margin-left: 40px;
-        
-    }
-
-    .send_name{
-        height: 38px;
-        background: #e8491d;
-        border: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-        float: right;
-        color: #ecd4d4;
-        margin-left: 5px;
-        margin-top: 5px;
-    }
+  .send_name {
+    height: 38px;
+    background: #e8491d;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: right;
+    color: #ecd4d4;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
 }
 
 .gtitle {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 #contact {
-    position: relative;
-    left: 0%;
-    font-size: 18px;
+  position: relative;
+  left: 0%;
+  font-size: 18px;
 }
 
-@media (max-width : 320px) {
-    #firstname form{
-        float: none;
-        margin-left: 10px;
-        
-    }
-    #demo {
-        overflow-wrap: break-word;
-    }
+@media (max-width: 320px) {
+  #firstname form {
+    float: none;
+    margin-left: 10px;
+  }
+  #demo {
+    overflow-wrap: break-word;
+  }
 
-    .send_name{
-        height: 38px;
-        background: #e8491d;
-        border: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-        float: right;
-        color: #ecd4d4;
-        margin-top: 5px;
-    }
+  .send_name {
+    height: 38px;
+    background: #e8491d;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: right;
+    color: #ecd4d4;
+    margin-top: 5px;
+  }
 }
-
-
