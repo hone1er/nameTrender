@@ -78,5 +78,48 @@ function buildLineGraph() {
   });
 }
 
+
+function buildChoropleth() {
+  console.log('building')
+  Plotly.d3.csv(
+    "https://raw.githubusercontent.com/ykarki1/water-access/master/water_data.csv",
+    function(err, rows) {
+      function unpack(rows, key) {
+        return rows.map(function(row) {
+          return row[key];
+        });
+      }
+      var data = [
+        {
+          type: "choropleth",
+          locationmode: "USA-states",
+          locations: unpack(rows, "state"),
+          z: unpack(rows, 2014),
+          text: unpack(rows, "state"),
+          autocolorscale: true
+        }
+      ];
+
+      var layout = {
+        title: "2014 US Popultaion by State",
+        geo: {
+          scope: "usa",
+          countrycolor: "rgb(255, 255, 255)",
+          showland: true,
+          landcolor: "rgb(217, 217, 217)",
+          showlakes: true,
+          lakecolor: "rgb(255, 255, 255)",
+          subunitcolor: "rgb(255, 255, 255)",
+          lonaxis: {},
+          lataxis: {}
+        }
+      };
+      Plotly.plot('myDiv', data, layout, { showLink: false });
+    }
+  );
+}
+
+buildChoropleth()
+
 var filterbtn = d3.select("#filter-btn");
 filterbtn.on("click", buildLineGraph);
