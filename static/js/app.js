@@ -82,7 +82,7 @@ function buildLineGraph() {
 function buildChoropleth() {
   console.log('building')
   Plotly.d3.csv(
-    "https://raw.githubusercontent.com/ykarki1/water-access/master/water_data.csv",
+    "https://raw.githubusercontent.com/hone1er/nameTrender/choropleth/static/js/joseph.csv?token=AFZ7MYCENSV5M5M4QPX2RK25EEDG2",
     function(err, rows) {
       function unpack(rows, key) {
         return rows.map(function(row) {
