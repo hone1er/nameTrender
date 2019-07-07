@@ -61,6 +61,7 @@ class Grapher:
         return jsonify(jsond)
 
 
+grapher = Grapher()
 app.add_url_rule("/names/<name>", "",
                  lambda name: grapher.graph(name), methods=["GET"])
 app.add_url_rule("/names/map/<name>", " ",
@@ -68,5 +69,4 @@ app.add_url_rule("/names/map/<name>", " ",
 
 
 if __name__ == "__main__":
-    grapher = Grapher()
     app.run(debug=False)
