@@ -213,8 +213,8 @@ function buildChoropleth() {
 
 function build() {
   buildLineGraph();
-  //buildChoropleth();
- //
+  buildChoropleth();
+  //
 }
 
 var filterbtn = d3.select("#filter-btn");
