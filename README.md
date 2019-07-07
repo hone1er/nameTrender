@@ -19,7 +19,11 @@ count: [],
 year: []
 }}
 
-### /names/map/<name>
+buildLineGraph() take the infromation provided from theis endpoint to produce a line chart showing births per year for males and females
 
-returns data in csv format for the given name
+### /names/map/<name>
+Pandas reads in a csv file from an AWS S3 bucket via the s3fs module that contains all name, state, and year info. Pandas then
+returns data in csv format after filtering for the given name
 columns = [state, 1910, 1911, 1912,...2017]
+
+buildChoropleth() takes the information provided from this endpoint to produce a choroleth graph of the USA

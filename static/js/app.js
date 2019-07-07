@@ -213,7 +213,7 @@ function buildChoropleth() {
 
 function build() {
   buildLineGraph();
- // buildChoropleth();
+  buildChoropleth();
  //
 }
 
