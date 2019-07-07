@@ -37,8 +37,8 @@ class Grapher:
     def __init__(self):
         self.names = pd.read_csv(
             "Resources/namedf.csv")[["name", "gender", "count", "year"]]
-        self.frames = pd.read_csv(
-            'Resources/name.csv.gz', compression='gzip', index_col=['name', 'state'])
+        #self.frames = pd.read_csv(
+         #   'Resources/name.csv.gz', compression='gzip', index_col=['name', 'state'])
 
     def choroplethMap(self, name):
         # read in csv
@@ -66,8 +66,8 @@ class Grapher:
 grapher = Grapher()
 app.add_url_rule("/names/<name>", "",
                  lambda name: grapher.graph(name), methods=["GET"])
-app.add_url_rule("/names/map/<name>", " ",
-                 lambda name: grapher.choroplethMap(name),  methods=["GET"])
+#app.add_url_rule("/names/map/<name>", " ",
+#                 lambda name: grapher.choroplethMap(name),  methods=["GET"])
 
 
 if __name__ == "__main__":
