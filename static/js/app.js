@@ -78,48 +78,143 @@ function buildLineGraph() {
   });
 }
 
-
 function buildChoropleth() {
-  console.log('building')
-  Plotly.d3.csv(
-    "https://raw.githubusercontent.com/hone1er/nameTrender/choropleth/static/js/joseph.csv?token=AFZ7MYCENSV5M5M4QPX2RK25EEDG2",
-    function(err, rows) {
-      function unpack(rows, key) {
-        return rows.map(function(row) {
-          return row[key];
-        });
-      }
-      var data = [
-        {
-          type: "choropleth",
-          locationmode: "USA-states",
-          locations: unpack(rows, "state"),
-          z: unpack(rows, 2014),
-          text: unpack(rows, "state"),
-          autocolorscale: true
-        }
-      ];
-
-      var layout = {
-        title: "2014 US Popultaion by State",
-        geo: {
-          scope: "usa",
-          countrycolor: "rgb(255, 255, 255)",
-          showland: true,
-          landcolor: "rgb(217, 217, 217)",
-          showlakes: true,
-          lakecolor: "rgb(255, 255, 255)",
-          subunitcolor: "rgb(255, 255, 255)",
-          lonaxis: {},
-          lataxis: {}
-        }
-      };
-      Plotly.plot('myDiv', data, layout, { showLink: false });
+  console.log("building");
+  var selector = d3.select("#name");
+  var name = selector.property("value");
+  Plotly.d3.csv(`http://127.0.0.1:5000/names/map/${name}`, function(err, rows) {
+    function unpack(rows, key) {
+      return rows.map(function(row) {
+        return row[key];
+      });
     }
-  );
+    var allYears = [];
+    Object.entries(rows[0]).forEach(function(i, idx, array) {
+      if (idx < array.length - 1) {
+        allYears.push(array[idx][0]);
+      }
+    });
+    var steps = [];
+    for (let i = 0; i < allYears.length; i++) {
+      const element = allYears[i];
+      var step = {
+        label: element,
+        method: "animate",
+        args: [
+          [element],
+          {
+            mode: "immediate",
+            frame: { redraw: true, duration: 2 },
+            transition: { duration: 20 }
+          }
+        ]
+      };
+      steps.push(step);
+    }
+    var frames = [];
+    for (let i = 0; i < allYears.length; i++) {
+      const element = allYears[i];
+      var frame = {
+        name: element,
+        data: [
+          {
+            z: unpack(rows, element)
+          }
+        ]
+      };
+      frames.push(frame);
+    }
+
+    Plotly.newPlot(
+      "myDiv",
+      {
+        data: [
+          {
+            type: "choropleth",
+            locationmode: "USA-states",
+            locations: unpack(rows, "state"),
+            z: unpack(rows, allYears[0]),
+            text: unpack(rows, "state"),
+            autocolorscale: true
+          }
+        ],
+        layout: {
+          title: `Total Births By State For ${name}`,
+          geo: {
+            scope: "usa",
+            showlakes: true,
+            lakecolor: "rgb(255,255,255)"
+          },
+          sliders: [
+            {
+              pad: { t: 30 },
+              x: 0,
+              len: 0.95,
+              currentvalue: {
+                xanchor: "right",
+                prefix: "Year: ",
+                font: {
+                  color: "#888",
+                  size: 20
+                }
+              },
+              transition: { duration: 0 },
+              // By default, animate commands are bound to the most recently animated frame:
+              steps: steps
+            }
+          ],
+          updatemenus: [
+            {
+              type: "buttons",
+              showactive: false,
+              x: 0.3,
+              y: 0.3,
+              xanchor: "right",
+              yanchor: "top",
+              direction: "left",
+              pad: { t: 60, r: 20 },
+              buttons: [
+                {
+                  label: "Play",
+                  method: "animate",
+                  args: [
+                    null,
+                    {
+                      fromcurrent: true,
+                      frame: { redraw: true, duration: 1000 },
+                      transition: { duration: 500 }
+                    }
+                  ]
+                },
+                {
+                  label: "Pause",
+                  method: "animate",
+                  args: [
+                    [null],
+                    {
+                      mode: "immediate",
+                      frame: { redraw: true, duration: 0 }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        // The slider itself does not contain any notion of timing, so animating a slider
+        // must be accomplished through a sequence of frames. Here we'll change the color
+        // and the data of a single trace:
+        frames: frames
+      },
+      { responsive: true }
+    );
+  });
 }
 
-buildChoropleth()
+function build() {
+  buildLineGraph();
+  buildChoropleth();
+}
 
 var filterbtn = d3.select("#filter-btn");
-filterbtn.on("click", buildLineGraph);
+filterbtn.on("click", build);
